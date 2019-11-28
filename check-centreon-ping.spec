@@ -4,6 +4,7 @@ Release:    1
 BuildArch:  noarch
 Summary:    Legacy Centreon monitoring check_centreon_ping command
 License:    GPLv2
+AutoReq:    no
 Requires:   perl
 Requires:   nagios-plugins-perl
 Requires:   iputils
