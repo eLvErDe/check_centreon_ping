@@ -1,6 +1,7 @@
 Name:       check-centreon-ping
 Version:    0.0.%{_commit_date}.%{_commit_hash}
 Release:    1
+BuildArch:  noarch
 Summary:    Legacy Centreon monitoring check_centreon_ping command
 License:    GPLv2
 Requires:   perl
