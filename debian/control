@@ -1,0 +1,19 @@
+Source: check-centreon-ping
+Section: net
+Priority: optional
+Maintainer: Adam Cecile <acecile@le-vert.net>
+Build-Depends: debhelper (>= 9),
+ perl,
+ git
+Standards-Version: 4.1.3
+Homepage: https://github.com/eLvErDe/check_centreon_ping
+
+Package: check-centreon-ping
+Architecture: all
+Depends: ${misc:Depends},
+ perl,
+ monitoring-plugins-common,
+ iputils-ping | inetutils-ping,
+Description: Legacy Centreon monitoring check_centreon_ping command
+ Extracted from Centreon Web 2/8.30 archive and modified to run
+ standalone.

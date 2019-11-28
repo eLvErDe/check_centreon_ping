@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+DESTDIR := $(CURDIR)/debian/check-centreon-ping
+COMMIT_DATE := $(shell git log -1 --format=%cd --date=short |sed 's!-!!g')
+COMMIT_HASH := $(shell git rev-parse --short HEAD)
+PKG_VERSION := 0.0.$(COMMIT_DATE).$(COMMIT_HASH)
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p $(DESTDIR)/usr/lib/nagios/plugins
+	sed 's!@NAGIOS_PLUGINS@!/usr/lib/nagios/plugins!' \
+	  $(CURDIR)/check_centreon_ping \
+          > $(DESTDIR)/usr/lib/nagios/plugins/check_centreon_ping
+	chmod 0755 $(DESTDIR)/usr/lib/nagios/plugins/check_centreon_ping
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v"$(PKG_VERSION)"
+
+# Compat with old distros
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip

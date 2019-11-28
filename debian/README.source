@@ -1,0 +1,8 @@
+check-centreon-ping for Debian
+------------------------------
+
+This package has been generated from Git repository directly.
+No real releases exists as the code is pretty much finished and is not
+supposed to be changed anymore.
+
+ -- Adam Cecile <acecile@le-vert.net>  Thu, 28 Nov 2019 22:10:41 +0100

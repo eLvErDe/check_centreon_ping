@@ -1,0 +1,5 @@
+check-centreon-ping (0.0) unstable; urgency=medium
+
+  * Initial Release.
+
+ -- Adam Cecile <acecile@le-vert.net>  Thu, 28 Nov 2019 22:10:41 +0100
